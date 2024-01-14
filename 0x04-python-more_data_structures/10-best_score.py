@@ -1,4 +1,6 @@
-t_score(a_dictionary):
+#!/usr/bin/python3
+
+def best_score(a_dictionary):
     """
     Returns a key with a biggest integer value or
     returns None if no integer found
