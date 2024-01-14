@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-
 if __name__ == "__main__":
-
     import hidden_4
-    for i in dir(hidden_4):
-        if i[0] != '_' and i[1] != '_':
-            print("{}".format(i))
+    # Print sorted name from directory
+    for name in sorted(dir(hidden_4)):
+        # print only names that do not start with __
+        if name[:2] != '__':
+            print("{}".format(name))
