@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """0. What's my status? #0
 script that fetches https://alx-intranet.hbtn.io/status"""
