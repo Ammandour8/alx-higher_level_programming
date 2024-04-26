@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-"""Fetches the URL: https://intranet.hbtn.io/status
-with `requests` module
-"""
-
+"""4. What's my status? #1
+fetches https://alx-intranet.hbtn.io/status"""
 import requests
 
 
 if __name__ == "__main__":
-    req = requests.get('https://intranet.hbtn.io/status')
-
-    print('Body response:')
-    print('\t- type: {_type}'.format(_type=type(req.text)))
-    print('\t- content: {_content}'.format(_content=req.text))
+    url = "https://alx-intranet.hbtn.io/status"
+    data = requests.get(url).text
+    res_type = type(data)
+    print(f"Body response:\n\t- type: {res_type}\n\t\
+- content: {data}")
