@@ -1,13 +1,21 @@
 #!/usr/bin/node
+// uses Star Wars API to display amount of films featuring Wedge Antilles
 const request = require('request');
-const find = '/18/';
+
 request(process.argv[2], function (error, response, body) {
-  if (error) console.error(error);
-  let num = 0;
-  for (const film of JSON.parse(body).results) {
-    for (const character of film.characters) {
-      num += (character.endsWith(find) ? 1 : 0);
+  if (error) {
+    console.error(error);
+  }
+  const films = JSON.parse(body).results;
+  const wedgeId = 18;
+  let count = 0;
+  for (const film of films) {
+    for (const url of film.characters) {
+      if (url.includes(
+        `/api/people/${wedgeId}/`)) {
+        count += 1;
+      }
     }
   }
-  console.log(num);
+  console.log(count);
 });
